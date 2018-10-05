@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace Tarea2
+namespace Tarea2.Logica.Interfaz
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
@@ -14,7 +14,7 @@ namespace Tarea2
     {
 
         [OperationContract]
-        clsEcuacion calcularEcuacion();
+        bool Ecuacion (int valorA, int valorB, int valorC);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
