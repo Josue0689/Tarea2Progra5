@@ -7,22 +7,63 @@ namespace Tarea2.Logica.Accion
 {
     public class clsEcuacion
     {
-        public double discriminante { get; set; }
-        public double primeraRaiz { get; set; }
-        public double segundaRaiz { get; set; }
-        public int codigo { get; set; }
+        Validacion.operacionCuadratica val = new Validacion.operacionCuadratica();
 
-        internal bool calcularEcuacion(int A, int B, int C) {
-            var val = new Logica.Validacion.operacionCuadratica();
-            discriminante = (Math.Pow(B, 2) - 4 * A * C);
-            if (val.validarValores(A,discriminante))
+        private double discriminante;
+
+        public double _discriminante
+        {
+            get { return discriminante; }
+            set { discriminante = value; }
+        }
+
+        private double primeraRaiz;
+
+        public double _primeraRaiz
+        {
+            get { return primeraRaiz; }
+            set { primeraRaiz = value; }
+        }
+
+        private double segundaRaiz;
+
+        public double _segundaRaiz
+        {
+            get { return segundaRaiz; }
+            set { segundaRaiz = value; }
+        }
+
+        private int codigo;
+
+        public int _codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        }
+
+        internal double calcularEcuacion(double A, double B, double C) {
+            discriminante = calcularDiscriminante(A, B, C);
+            if (val.validarA(A))
             {
-                primeraRaiz = ((-B + Math.Sqrt(discriminante)) / (2 * A));
-                segundaRaiz = ((-B - Math.Sqrt(discriminante)) / (2 * A));
-                return true;
+                if (val.validarDiscriminante(discriminante))
+                {
+                    primeraRaiz = ((-B + Math.Sqrt(discriminante)) / (2 * A));
+                    segundaRaiz = ((-B - Math.Sqrt(discriminante)) / (2 * A));
+                    return codigo = 0;
+                }
+                else
+                    return codigo = 2;         
             }
             else
-                return false;
+                return codigo = 1;
         }
+
+        internal double calcularDiscriminante(double a,double b, double c)
+        {
+            var d = (Math.Pow(b, 2) - 4 * a * c); ;
+            return d;
+        }
+
+
     }
 }

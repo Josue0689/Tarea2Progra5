@@ -7,9 +7,18 @@ namespace Tarea2.Logica.Validacion
 {
     public class operacionCuadratica
     {
-        public bool validarValores(int vaA, double discriminante) {
-            
-            if (vaA == 0 || discriminante < 0)
+        public bool validarA(double vaA) {
+            if (vaA == 0)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
+        public bool validarDiscriminante(double discriminante)
+        {
+            if (discriminante < 0)
             {
                 return false;
             }
