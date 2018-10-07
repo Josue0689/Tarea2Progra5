@@ -9,9 +9,9 @@ namespace Tarea2.Logica.Accion
     {
         Validacion.operacionCuadratica val = new Validacion.operacionCuadratica();
 
-        private double discriminante;
+        private Nullable<double> discriminante;
 
-        public double _discriminante
+        public Nullable<double> _discriminante
         {
             get { return discriminante; }
             set { discriminante = value; }
@@ -41,7 +41,7 @@ namespace Tarea2.Logica.Accion
             set { codigo = value; }
         }
 
-        internal int calcularEcuacion(double A, double B, double C) {
+        public int calcularEcuacion(double? A, double? B, double? C) {
             discriminante = calcularDiscriminante(A, B, C);
             if (val.validarA(A))
             {
@@ -67,18 +67,18 @@ namespace Tarea2.Logica.Accion
                 
         }
 
-        internal double calcularDiscriminante(double a,double b, double c)
+        internal double? calcularDiscriminante(double? a, double? b, double? c)
         {
-            var d = (Math.Pow(b, 2) - 4 * a * c);
+            var d = (Math.Pow(Convert.ToDouble(b), 2) - 4 * a * c);
             return d;
         }
 
-        internal Nullable<double> primerX(double discriminante, double A, double B)
+        internal double? primerX(double? discriminante, double? A, double? B)
         {
             Nullable<double> raiz;
             try
             {
-                return raiz = (-B + Math.Sqrt(discriminante)) / (2 * A);
+                return raiz = (-B + Math.Sqrt(Convert.ToDouble(discriminante))) / (2 * A);
             }
             catch (Exception)
             {
@@ -86,12 +86,12 @@ namespace Tarea2.Logica.Accion
             }
         }
 
-        internal Nullable<double> segundaX(double discriminante, double A, double B)
+        internal double? segundaX(double? discriminante, double? A, double? B)
         {
             Nullable<double> raiz;
             try
             {
-                return raiz = (-B - Math.Sqrt(discriminante)) / (2 * A);
+                return raiz = (-B - Math.Sqrt(Convert.ToDouble(discriminante))) / (2 * A);
             }
             catch (Exception)
             {

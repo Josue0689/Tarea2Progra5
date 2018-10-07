@@ -14,7 +14,7 @@ namespace Tarea2.Logica.Interfaz
     {
 
         [OperationContract]
-        bool Ecuacion (int valorA, int valorB, int valorC);
+        int Ecuacion (int valorA, int valorB, int valorC);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

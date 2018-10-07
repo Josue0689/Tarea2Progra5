@@ -11,12 +11,12 @@ namespace Tarea2.Logica.Servicio
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class WSEcuacion : ISEcuacion
+    /*public class WSEcuacion : ISEcuacion
     {
-        public bool Ecuacion(int valorA, int valorB, int valorC)
+        public int Ecuacion(int valorA, int valorB, int valorC)
         {
-            Logica.Especificacion.operacionEcuacion laEspecificacion = new Especificacion.operacionEcuacion();
-            bool resultado = laEspecificacion.ecuacionCuadratica(valorA, valorB, valorC);
+            Especificacion.operacionEcuacion laEspecificacion = new Especificacion.operacionEcuacion();
+            int resultado = laEspecificacion.ecuacionCuadratica(valorA, valorB, valorC);
             return resultado;
 
         }
@@ -25,5 +25,5 @@ namespace Tarea2.Logica.Servicio
         {
             throw new NotImplementedException();
         }
-    }
+    }*/
 }

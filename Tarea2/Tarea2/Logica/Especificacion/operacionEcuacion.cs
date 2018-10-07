@@ -7,7 +7,7 @@ namespace Tarea2.Logica.Especificacion
 {
     public class operacionEcuacion
     {
-        public bool ecuacionCuadratica (int varA, int varB, int varC)
+        public int ecuacionCuadratica (double? varA, double? varB, double? varC)
         {
             var laAccion = new Accion.clsEcuacion();
             return laAccion.calcularEcuacion(varA, varB, varC);
