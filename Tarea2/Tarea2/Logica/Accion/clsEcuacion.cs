@@ -60,7 +60,7 @@ namespace Tarea2.Logica.Accion
 
         internal double calcularDiscriminante(double a,double b, double c)
         {
-            var d = (Math.Pow(b, 2) - 4 * a * c); ;
+            var d = (Math.Pow(b, 2) - 4 * a * c);
             return d;
         }
 
