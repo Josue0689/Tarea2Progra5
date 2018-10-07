@@ -17,17 +17,17 @@ namespace Tarea2.Logica.Accion
             set { discriminante = value; }
         }
 
-        private double primeraRaiz;
+        private Nullable<double> primeraRaiz;
 
-        public double _primeraRaiz
+        public Nullable<double> _primeraRaiz
         {
             get { return primeraRaiz; }
             set { primeraRaiz = value; }
         }
 
-        private double segundaRaiz;
+        private Nullable<double> segundaRaiz;
 
-        public double _segundaRaiz
+        public Nullable<double> _segundaRaiz
         {
             get { return segundaRaiz; }
             set { segundaRaiz = value; }
@@ -47,8 +47,8 @@ namespace Tarea2.Logica.Accion
             {
                 if (val.validarDiscriminante(discriminante))
                 {
-                    primeraRaiz = ((-B + Math.Sqrt(discriminante)) / (2 * A));
-                    segundaRaiz = ((-B - Math.Sqrt(discriminante)) / (2 * A));
+                    primeraRaiz = primerX(discriminante, A, B);
+                    segundaRaiz = segundaX(discriminante, A, B);
                     return codigo = 0;
                 }
                 else
@@ -64,6 +64,30 @@ namespace Tarea2.Logica.Accion
             return d;
         }
 
+        internal Nullable<double> primerX(double discriminante, double A, double B)
+        {
+            Nullable<double> raiz;
+            try
+            {
+                return raiz = (-B + Math.Sqrt(discriminante)) / (2 * A);
+            }
+            catch (Exception)
+            {
+                return raiz = null;
+            }
+        }
 
+        internal Nullable<double> segundaX(double discriminante, double A, double B)
+        {
+            Nullable<double> raiz;
+            try
+            {
+                return raiz = (-B - Math.Sqrt(discriminante)) / (2 * A);
+            }
+            catch (Exception)
+            {
+                return raiz = null;
+            }
+        }
     }
 }
