@@ -52,10 +52,19 @@ namespace Tarea2.Logica.Accion
                     return codigo = 0;
                 }
                 else
-                    return codigo = 2;         
+                {
+                    primeraRaiz = null;
+                    segundaRaiz = null;
+                    return codigo = 2;
+                }
             }
             else
+            {
+                primeraRaiz = null;
+                segundaRaiz = null;
                 return codigo = 1;
+            }
+                
         }
 
         internal double calcularDiscriminante(double a,double b, double c)
