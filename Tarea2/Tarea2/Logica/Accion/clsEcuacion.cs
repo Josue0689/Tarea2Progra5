@@ -41,7 +41,7 @@ namespace Tarea2.Logica.Accion
             set { codigo = value; }
         }
 
-        internal double calcularEcuacion(double A, double B, double C) {
+        internal int calcularEcuacion(double A, double B, double C) {
             discriminante = calcularDiscriminante(A, B, C);
             if (val.validarA(A))
             {
